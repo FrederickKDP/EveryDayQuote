@@ -1,1 +1,6 @@
-{"name":"my_dictionary","version":"1.0.0","entities":[{"name":"entity_0","value":"value_0"},{"name":"entity_1","value":"value_1"}]}
+[
+{"author":"Dale Carnegie","quote":"Those convinced against their will are of the same opinion still","tags":["soft skill"]},
+{"author":"eu2","quote":"2life or die, that's the question","tags":["soft skill"]},
+{"author":"3eu","quote":"3life or die, that's the question","tags":["soft skill"]},
+{"author":"4eu","quote":"4life or die, that's the question","tags":["soft skill"]}
+]
