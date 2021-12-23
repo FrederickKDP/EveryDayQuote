@@ -1,6 +1,6 @@
 [
 {"author":"Dale Carnegie","quote":"Those convinced against their will are of the same opinion still","tags":["soft skill"]},
-{"author":"eu2","quote":"2life or die, that's the question","tags":["soft skill"]},
+{"author":"Shakespeare","quote":"There is nothing good or bad, but thinking makes it so","tags":["soft skill","philosophy"]},
 {"author":"3eu","quote":"3life or die, that's the question","tags":["soft skill"]},
 {"author":"4eu","quote":"4life or die, that's the question","tags":["soft skill"]}
 ]

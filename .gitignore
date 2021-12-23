@@ -7,3 +7,16 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 data_*/
+Roboto_Slab.zip
+Roboto_Slab/LICENSE.txt
+Roboto_Slab/README.txt
+Roboto_Slab/RobotoSlab-VariableFont_wght.ttf
+Roboto_Slab/static/RobotoSlab-Black.ttf
+Roboto_Slab/static/RobotoSlab-Bold.ttf
+Roboto_Slab/static/RobotoSlab-ExtraBold.ttf
+Roboto_Slab/static/RobotoSlab-ExtraLight.ttf
+Roboto_Slab/static/RobotoSlab-Light.ttf
+Roboto_Slab/static/RobotoSlab-Medium.ttf
+Roboto_Slab/static/RobotoSlab-Regular.ttf
+Roboto_Slab/static/RobotoSlab-SemiBold.ttf
+Roboto_Slab/static/RobotoSlab-Thin.ttf
