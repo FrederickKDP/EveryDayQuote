@@ -5,25 +5,34 @@
 [ext_resource path="res://Roboto_Slab/RobotoSlab-VariableFont_wght.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
+size = 18
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 extra_spacing_space = 1
 font_data = ExtResource( 4 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Scene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+fade_time = 0.5
 
 [node name="Control" type="Control" parent="."]
-margin_right = 1024.0
-margin_bottom = 78.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Quote" type="Label" parent="Control"]
-margin_right = 1020.0
-margin_bottom = 57.0
+anchor_left = 0.001
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -1.024
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
@@ -34,11 +43,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Author" type="Label" parent="Control"]
+[node name="Author" type="Label" parent="Control/Quote"]
+anchor_top = 1.064
+anchor_right = 0.437
+anchor_bottom = 1.532
 margin_left = 1.0
-margin_top = 50.0
-margin_right = 448.0
-margin_bottom = 76.0
+margin_top = -0.00799942
+margin_right = 0.511993
+margin_bottom = -0.00400543
 custom_fonts/font = SubResource( 1 )
 text = "Author: Me"
 autowrap = true
@@ -46,11 +58,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tags" type="Label" parent="Control"]
-margin_left = 475.0
-margin_top = 50.0
-margin_right = 1014.0
-margin_bottom = 76.0
+[node name="Tags" type="Label" parent="Control/Quote"]
+anchor_left = 0.464
+anchor_top = 1.064
+anchor_right = 1.0
+anchor_bottom = 1.532
+margin_left = -0.136017
+margin_top = -0.00799942
+margin_bottom = -0.00400543
 custom_fonts/font = SubResource( 1 )
 text = "Tags: Something"
 autowrap = true
@@ -58,25 +73,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NextQuote" type="Timer" parent="."]
+one_shot = true
+
 [node name="BorderToogle" type="Button" parent="."]
-margin_left = 4.38498
-margin_top = 75.8552
-margin_right = 32.385
-margin_bottom = 101.855
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 2.27963
+margin_top = -28.4006
+margin_right = 30.2797
+margin_bottom = -2.40081
 text = "B"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextQuote" type="Timer" parent="."]
-one_shot = true
-
 [node name="FadeOut" type="Tween" parent="."]
 
 [node name="FadeIn" type="Tween" parent="."]
 
-[connection signal="button_down" from="BorderToogle" to="BorderToogle" method="_on_Button_button_down"]
 [connection signal="timeout" from="NextQuote" to="." method="_on_Timer_timeout"]
+[connection signal="button_down" from="BorderToogle" to="BorderToogle" method="_on_Button_button_down"]
 [connection signal="tween_completed" from="FadeOut" to="." method="_on_FadeOut_tween_completed"]
 [connection signal="tween_completed" from="FadeIn" to="." method="_on_FadeIn_tween_completed"]
