@@ -9,6 +9,7 @@ size = 18
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
+extra_spacing_top = -2
 extra_spacing_space = 1
 font_data = ExtResource( 4 )
 
@@ -32,7 +33,10 @@ __meta__ = {
 anchor_left = 0.001
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -1.024
+margin_left = 0.488
+margin_top = -1.0
+margin_right = -2.0
+margin_bottom = 40.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
@@ -48,9 +52,9 @@ anchor_top = 1.064
 anchor_right = 0.437
 anchor_bottom = 1.532
 margin_left = 1.0
-margin_top = -0.00799942
-margin_right = 0.511993
-margin_bottom = -0.00400543
+margin_top = -6.72
+margin_right = 0.819
+margin_bottom = -31.86
 custom_fonts/font = SubResource( 1 )
 text = "Author: Me"
 autowrap = true
@@ -63,9 +67,9 @@ anchor_left = 0.464
 anchor_top = 1.064
 anchor_right = 1.0
 anchor_bottom = 1.532
-margin_left = -0.136017
-margin_top = -0.00799942
-margin_bottom = -0.00400543
+margin_left = -0.0319977
+margin_top = -6.72
+margin_bottom = -31.86
 custom_fonts/font = SubResource( 1 )
 text = "Tags: Something"
 autowrap = true
@@ -74,19 +78,22 @@ __meta__ = {
 }
 
 [node name="NextQuote" type="Timer" parent="."]
+wait_time = 60.0
 one_shot = true
 
 [node name="BorderToogle" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 2.27963
-margin_top = -28.4006
-margin_right = 30.2797
-margin_bottom = -2.40081
+margin_left = 486.382
+margin_top = -23.0729
+margin_right = 508.382
+margin_bottom = -3.07294
 text = "B"
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": "TODO: Make border appears when hover on top instead of a button
+TODO: Make transparent only when not hovering"
 }
 
 [node name="FadeOut" type="Tween" parent="."]
