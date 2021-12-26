@@ -99,7 +99,6 @@ TODO: Make transparent only when not hovering"
 [node name="FadeOut" type="Tween" parent="."]
 
 [node name="FadeIn" type="Tween" parent="."]
-
 [connection signal="timeout" from="NextQuote" to="." method="_on_Timer_timeout"]
 [connection signal="button_down" from="BorderToogle" to="BorderToogle" method="_on_Button_button_down"]
 [connection signal="tween_completed" from="FadeOut" to="." method="_on_FadeOut_tween_completed"]
