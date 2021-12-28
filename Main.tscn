@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://JsonReader.gd" type="Script" id=1]
 [ext_resource path="res://MakeBorderless.gd" type="Script" id=3]
@@ -12,6 +12,9 @@ use_filter = true
 extra_spacing_top = -2
 extra_spacing_space = 1
 font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Scene" type="Control"]
 anchor_right = 1.0
@@ -30,17 +33,16 @@ __meta__ = {
 }
 
 [node name="Quote" type="Label" parent="Control"]
-anchor_left = 0.001
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = 0.488
+anchor_bottom = 0.812
+margin_left = 1.0
 margin_top = -1.0
 margin_right = -2.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 1 )
+margin_bottom = 0.0639954
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
+custom_fonts/font = SubResource( 1 )
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales feugiat sem ut rhoncus. Morbi quis pharetra purus. Morbi mattis pretium ipsum, a euismod odio auctor id. Maecenas in auctor."
 autowrap = true
 __meta__ = {
@@ -48,15 +50,16 @@ __meta__ = {
 }
 
 [node name="Author" type="Label" parent="Control/Quote"]
-anchor_top = 1.064
+anchor_left = -0.002
+anchor_top = 1.229
 anchor_right = 0.437
-anchor_bottom = 1.532
-margin_left = 1.0
-margin_top = -6.72
+anchor_bottom = 1.229
+margin_left = 2.018
+margin_top = -24.045
 margin_right = 0.819
-margin_bottom = -31.86
+margin_bottom = -0.0450134
 custom_fonts/font = SubResource( 1 )
-text = "Author: Me"
+text = "Someone"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,12 +67,13 @@ __meta__ = {
 
 [node name="Tags" type="Label" parent="Control/Quote"]
 anchor_left = 0.464
-anchor_top = 1.064
-anchor_right = 1.0
-anchor_bottom = 1.532
-margin_left = -0.0319977
-margin_top = -6.72
-margin_bottom = -31.86
+anchor_top = 1.229
+anchor_right = 1.004
+anchor_bottom = 1.229
+margin_left = -0.0320129
+margin_top = -24.045
+margin_right = -2.03604
+margin_bottom = -0.0450134
 custom_fonts/font = SubResource( 1 )
 text = "Tags: Something"
 autowrap = true
@@ -81,25 +85,22 @@ __meta__ = {
 wait_time = 60.0
 one_shot = true
 
-[node name="BorderToogle" type="Button" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 486.382
-margin_top = -23.0729
-margin_right = 508.382
-margin_bottom = -3.07294
-text = "B"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": "TODO: Make border appears when hover on top instead of a button
-TODO: Make transparent only when not hovering"
-}
-
 [node name="FadeOut" type="Tween" parent="."]
 
 [node name="FadeIn" type="Tween" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 48.0
+margin_top = -7.0
+margin_right = -46.0
+margin_bottom = -33.0
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+
 [connection signal="timeout" from="NextQuote" to="." method="_on_Timer_timeout"]
-[connection signal="button_down" from="BorderToogle" to="BorderToogle" method="_on_Button_button_down"]
 [connection signal="tween_completed" from="FadeOut" to="." method="_on_FadeOut_tween_completed"]
 [connection signal="tween_completed" from="FadeIn" to="." method="_on_FadeIn_tween_completed"]
+[connection signal="mouse_entered" from="Panel" to="Panel" method="_on_Panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="Panel" method="_on_Panel_mouse_exited"]

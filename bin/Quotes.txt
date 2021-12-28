@@ -1,0 +1,5 @@
+[
+{"author":"Dale Carnegie","quote":"Those convinced against their will are of the same opinion still","tags":["soft skill"]},
+{"author":"Shakespeare","quote":"There is nothing good or bad, but thinking makes it so","tags":["soft skill","philosophy"]},
+{"author":"Stephen Silver","quote":"Art is all about the 4 Ps; Passion, practice, persistence and patience.","tags":["art"]}
+]

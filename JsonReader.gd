@@ -24,19 +24,34 @@ func _ready():
 	var _inter = fadeIn.interpolate_property(group_label, "modulate", Color(1,1,1,1), Color(1,1,1,0), fade_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	_inter = fadeOut.interpolate_property(group_label, "modulate", Color(1,1,1,0), Color(1,1,1,1), fade_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	
-	get_tree().get_root().set_transparent_background(true)
 	randomize()
 	var file = File.new()
-	file.open("res://Quotes.txt", File.READ)
-	var content = file.get_as_text()
-	quotes_col  = JSON.parse(content)
-	max_quotes = quotes_col.result.size()
-	current_quote = randi()%max_quotes
-	#var entity = quotes_col.result[current_quote]
-	update_quote()
-	var _fade = fadeOut.start()
+	if(file.file_exists("res://Quotes.txt")):
+		var err = file.open("res://Quotes.txt", File.READ)
+		if(err==OK):
+			var content = file.get_as_text()
+			# TODO: JSON fail
+			quotes_col  = JSON.parse(content)
+			max_quotes = quotes_col.result.size()
+			current_quote = randi()%max_quotes
+			update_quote()
+			var _fade = fadeOut.start()
+		else:
+			printerr("ERROR: "+err)
+	else:
+		err_file_not_found()
 	file.close()
-	#return content
+
+func err_file_not_read():
+	quote_label.text = "File \"Quotes.txt\" could not be read. Please close the program and try again."
+	author_label.text = ""
+	tags_label.text = ""
+
+func err_file_not_found():
+	printerr("ERROR: File \"Quotes.txt\" not found.")
+	quote_label.text = "Not found \"Quotes.txt\". Please close the program and try again."
+	author_label.text = ""
+	tags_label.text = ""
 
 func next_quote():
 	current_quote+=1
