@@ -26,21 +26,29 @@ func _ready():
 	
 	randomize()
 	var file = File.new()
-	if(file.file_exists("res://Quotes.txt")):
+	if file.file_exists("res://Quotes.txt"):
 		var err = file.open("res://Quotes.txt", File.READ)
 		if(err==OK):
 			var content = file.get_as_text()
-			# TODO: JSON fail
 			quotes_col  = JSON.parse(content)
-			max_quotes = quotes_col.result.size()
-			current_quote = randi()%max_quotes
-			update_quote()
-			var _fade = fadeOut.start()
+			if typeof(quotes_col.result) == TYPE_ARRAY:
+				max_quotes = quotes_col.result.size()
+				current_quote = randi()%max_quotes
+				update_quote()
+				var _fade = fadeOut.start()
+			else:
+				json_fail()
 		else:
 			printerr("ERROR: "+err)
 	else:
 		err_file_not_found()
 	file.close()
+
+func json_fail():
+	printerr("ERROR: Unable to read JSON format")
+	quote_label.text = "JSON format could not be read from \"Quotes.txt\" . Please verify file."
+	author_label.text = ""
+	tags_label.text = ""
 
 func err_file_not_read():
 	quote_label.text = "File \"Quotes.txt\" could not be read. Please close the program and try again."
