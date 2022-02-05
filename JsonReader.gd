@@ -89,10 +89,14 @@ func _on_Timer_timeout():
 
 
 func _on_FadeOut_tween_completed(object, key):
+	var _o = object;
+	var _k = key;
 	timer.start()
 
 
 func _on_FadeIn_tween_completed(object, key):
+	var _o = object;
+	var _k = key;
 	update_quote()
 	var _inter = fadeOut.interpolate_property(group_label, "modulate", Color(1,1,1,0), Color(1,1,1,1), fade_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	fadeOut.start()
+	var _s = fadeOut.start()

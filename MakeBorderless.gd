@@ -8,11 +8,11 @@ func _ready():
 	OS.window_borderless = true
 
 func _on_Panel_mouse_entered():
+	delay.stop()
 	OS.window_borderless = false
 
 
 func _on_Panel_mouse_exited():
-	delay.stop()
 	delay.start()
 
 
