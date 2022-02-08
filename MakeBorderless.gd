@@ -4,7 +4,6 @@ onready var delay = $DelayedBorder
 
 func _ready():
 	#Make BG transparent
-	get_tree().get_root().set_transparent_background(true)
 	OS.window_borderless = true
 
 func _on_Panel_mouse_entered():

@@ -20,6 +20,8 @@ onready var timer : Timer = $NextQuote
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().get_root().set_transparent_background(true)
+	
 	#Fades
 	var _inter = fadeIn.interpolate_property(group_label, "modulate", Color(1,1,1,1), Color(1,1,1,0), fade_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	_inter = fadeOut.interpolate_property(group_label, "modulate", Color(1,1,1,0), Color(1,1,1,1), fade_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
@@ -89,14 +91,19 @@ func _on_Timer_timeout():
 
 
 func _on_FadeOut_tween_completed(object, key):
-	var _o = object;
-	var _k = key;
+	var _o = object
+	var _k = key
 	timer.start()
 
 
 func _on_FadeIn_tween_completed(object, key):
-	var _o = object;
-	var _k = key;
+	var _o = object
+	var _k = key
 	update_quote()
 	var _inter = fadeOut.interpolate_property(group_label, "modulate", Color(1,1,1,0), Color(1,1,1,1), fade_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	var _s = fadeOut.start()
+
+
+func _on_Background_button_down():
+	var root = get_tree().get_root()
+	root.set_transparent_background(!root.has_transparent_background())

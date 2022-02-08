@@ -54,10 +54,10 @@ anchor_left = -0.002
 anchor_top = 1.229
 anchor_right = 0.437
 anchor_bottom = 1.229
-margin_left = 2.018
-margin_top = -24.045
-margin_right = 0.819
-margin_bottom = -0.0450134
+margin_left = 33.2883
+margin_top = -25.6342
+margin_right = -12.1627
+margin_bottom = -1.63417
 custom_fonts/font = SubResource( 1 )
 text = "Someone"
 autowrap = true
@@ -77,6 +77,16 @@ margin_bottom = -0.0450134
 custom_fonts/font = SubResource( 1 )
 text = "Tags: Something"
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Button" parent="Control/Quote"]
+margin_left = 2.0
+margin_top = 104.0
+margin_right = 22.0
+margin_bottom = 124.0
+text = "o"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -106,6 +116,7 @@ __meta__ = {
 wait_time = 2.0
 one_shot = true
 
+[connection signal="button_down" from="Control/Quote/Background" to="." method="_on_Background_button_down"]
 [connection signal="timeout" from="NextQuote" to="." method="_on_Timer_timeout"]
 [connection signal="tween_completed" from="FadeOut" to="." method="_on_FadeOut_tween_completed"]
 [connection signal="tween_completed" from="FadeIn" to="." method="_on_FadeIn_tween_completed"]
