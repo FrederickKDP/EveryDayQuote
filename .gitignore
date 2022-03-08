@@ -6,5 +6,6 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+.gitignore
 data_*/
 ignore/*
