@@ -6,6 +6,7 @@ Download the release, or clone the directory build it on Godot. Make sure to hav
 
 ## Quote format
 Quotes.txt uses the JSON syntax ([wikipedia](https://en.wikipedia.org/wiki/JSON)), being straightforward for adding new entries; For such, do as follow for each entry:
+
 ````
 [
  {
@@ -44,7 +45,7 @@ Is also valid.
 Author of the quote, may be blank.
 
 ## Quote
-Quote, may be blank...but why would you?
+Quote, may be blank... but why would you?
 
 ## Tags
-Tags of the quote, it doesn't any functionality, just for organization.
+Tags of the quote, it doesn't add any functionality, just for organization.
