@@ -15,12 +15,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Every Day Quote"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://ignore/Credits.tscn"
 run/low_processor_mode=true
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://rect64.png"
-config/windows_native_icon="res://windows.ico"
+config/icon="res://ignore/rect64.png"
+config/windows_native_icon="res://rect31.ico"
 
 [display]
 
@@ -50,5 +50,5 @@ quality/shading/force_lambert_over_burley=true
 quality/shading/force_blinn_over_ggx=true
 quality/lightmapping/use_bicubic_sampling=false
 quality/subsurface_scattering/quality=0
-environment/default_clear_color=Color( 0.882353, 0.843137, 0.584314, 1 )
+environment/default_clear_color=Color( 0.862745, 0.768627, 0.541176, 1 )
 environment/default_environment="res://default_env.tres"

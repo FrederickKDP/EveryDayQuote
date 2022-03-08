@@ -1,11 +1,13 @@
 [
-{"author":"Dale Carnegie","quote":"Those convinced against their will are of the same opinion still","tags":["soft skill"]},
-{"author":"Shakespeare","quote":"There is nothing good or bad, but thinking makes it so","tags":["soft skill","philosophy"]},
-{"author":"Stephen Silver","quote":"Art is all about the 4 Ps; Passion, practice, persistence and patience.","tags":["art"]},
-{"author":"The Economic Press","quote":"When two parties always agree, one of them is not necessary.","tags":["soft skill"]},
-{"author":"The Economic Press","quote":"Anyone who disagrees with you is interested in the same things as you are.","tags":["soft skill"]},
-{"author":"The Economic Press","quote":"Always postpone actions to give time to you and your opponent to think about it.","tags":["soft skill"]},
-{"author":"Jan Peerce","quote":"When one yells, the other should listen. Because when two yell, there's no communication, just noise and bad vibrations","tags":["soft skill"]},
-{"author":"Alexander Pope","quote":"Men must be taught as if you taught them not and things unknown proposed as things forgot","tags":["soft skill"]},
-{"author":"Galileo","quote":"You cannot teach a man anything, you can only help him to find it within himself","tags":["soft skill"]}
+	{"author":"Insert an author here",
+	"quote":"Insert quote 1 here",
+	"tags":["tag1", "tag2"]},
+	
+	{"author":"Insert an author 2 here",
+	"quote":"Insert quote 2 here",
+	"tags":["tag3"]},
+
+	{"author":"Insert an author here",
+	"quote":"Insert quote 3 here",
+	"tags":["tag1"]}
 ]
